@@ -66,6 +66,7 @@ export default {
           body: JSON.stringify(jsonBody),
         }
       );
+      console.log('Response: ', response);
       console.log(await response.json());
     },
   },
