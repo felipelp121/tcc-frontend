@@ -53,9 +53,10 @@ export default {
         nomeRemedio: this.nomeRemedio,
         agendado: this.dataRemedio,
       };
+      //trocar dps a url pra url certa
       console.log("JSON: ", jsonBody);
       const response = await fetch(
-        "https://back-vercel-api.vercel.app/agendar",
+        "https://back-vercel-api.vercel.app/agendar", 
         {
           method: "POST",
           headers: {
@@ -65,7 +66,9 @@ export default {
           mode: "no-cors",
           body: JSON.stringify(jsonBody),
         }
-      );
+      ).then(res => res).catch(err => {
+        console.log("Erro-front: ", err);
+      });
       console.log('Response: ', response);
       console.log(await response.json());
     },
