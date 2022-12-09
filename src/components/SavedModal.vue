@@ -49,6 +49,11 @@ export default {
   methods: {
     async submitForm(e) {
       e.preventDefault();
+      const jsonBody = {
+        nomeRemedio: this.nomeRemedio,
+        agendado: this.dataRemedio,
+      };
+      console.log("JSON: ", jsonBody);
       const response = await fetch(
         "https://tcc-backend-chi.vercel.app/agendar",
         {
@@ -58,10 +63,7 @@ export default {
             "Content-Type": "application/json",
           },
           mode: "no-cors",
-          body: JSON.stringify({
-            nomeRemedio: this.nomeRemedio,
-            agendado: this.dataRemedio,
-          }),
+          body: JSON.stringify(jsonBody),
         }
       );
       console.log(await response.json());
