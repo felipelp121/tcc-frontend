@@ -32,7 +32,7 @@
         </button>
       </div>
       <div class="close" @click="$emit('close-modal')">
-        <img class="close-img" src="src\assets\close-icon.svg" alt="X" />
+        <img class="close-img" src="../assets/close-icon.svg" alt="X" />
       </div>
     </div>
   </transition>
