@@ -55,7 +55,7 @@ export default {
       };
       console.log("JSON: ", jsonBody);
       const response = await fetch(
-        "https://tcc-backend-chi.vercel.app/agendar",
+        "https://back-vercel-api.vercel.app/agendar",
         {
           method: "POST",
           headers: {
